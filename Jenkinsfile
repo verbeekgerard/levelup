@@ -2,18 +2,29 @@
 
 pipeline {
     agent any
-
+    tools {
+        maven 'M3ß'
+        jdk 'jdk1.8.0'
+    }
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                echo "Done!"
+                sh 'mvn install'
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml'
+                }
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-                echo "Done!"
+                sh 'mvn verify -Pintegratietest'
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml'
+                }
             }
         }
         stage('Deploy') {
@@ -27,11 +38,6 @@ pipeline {
                 }
 
             }
-        }
-    }
-    post {
-        always {
-            echo 'This will always run'
         }
     }
 }
