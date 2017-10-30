@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn verify -Pintegratietest'
+                sh 'mvn verify -Pintegrationtest'
             }
             post {
                 success {
