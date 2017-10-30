@@ -27,9 +27,11 @@ pipeline {
                 }
             }
         }
-        input 'Do you approve deployment?'
         stage('Deploy') {
             steps {
+                timeout(time:5, unit:'DAYS') {
+                    input message:'Approve deployment?'
+                }
                 retry(3) {
                     echo 'Deploying....'
                 }
