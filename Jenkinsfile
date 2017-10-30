@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn install'
+                sh 'mvn test'
             }
             post {
                 success {
@@ -27,6 +27,7 @@ pipeline {
                 }
             }
         }
+        input 'Do you approve deployment?'
         stage('Deploy') {
             steps {
                 retry(3) {
