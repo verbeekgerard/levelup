@@ -3,13 +3,13 @@
 pipeline {
     agent any
     tools {
-        maven 'M3'
+        maven 'M3xxxxx'
         jdk 'jdk1.8.0'
     }
     stages {
         stage('Build') {
             steps {
-                mvn test
+                sh 'mvn test'
             }
             post {
                 success {
