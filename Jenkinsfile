@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn test'
+                mvn test
             }
             post {
                 success {
