@@ -17,7 +17,7 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Integratie Test') {
             steps {
                 sh 'mvn verify -Pintegrationtest'
             }
