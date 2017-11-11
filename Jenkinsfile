@@ -1,4 +1,18 @@
 @Library('sharedlib') _
-node {
-  sh(libraryResource(‘list.sh’))
+pipeline {
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                debug {
+                    
+                }
+            }
+        }
+        stage('Compile') {
+            steps {
+                sh(libraryResource('list.sh'))
+            }
+        }
+    }
 }
