@@ -5,7 +5,7 @@ pipeline {
         stage('Compile') {
             steps {
                 sh(libraryResource('list.sh'))
-                libraryResource('input.json')
+                echo libraryResource('input.json')
             }
         }
     }
