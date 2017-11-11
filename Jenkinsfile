@@ -1,2 +1,4 @@
 @Library('sharedlib') _
-sh(libraryResource(‘list.sh’))
+pipeline {
+  sh(libraryResource(‘list.sh’))
+}
