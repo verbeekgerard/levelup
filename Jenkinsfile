@@ -1,2 +1,4 @@
 @Library('levelupLib') _
-sh(libraryResource(‘list.sh’))
+node {
+  sh(libraryResource(‘list.sh’))
+}
