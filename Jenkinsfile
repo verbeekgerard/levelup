@@ -1,2 +1,4 @@
 @Library('sharedlib') _
-levelupStages('input.json')
+levelupPipeline {
+  message = "Hello World"
+}
