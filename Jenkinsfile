@@ -17,14 +17,14 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        post {
-            always {
-                mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline success :)'
-            }
-            failure {
-                mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline failed :('
-            }
-        }
+    }
 
+    post {
+        always {
+            mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline success :)'
+        }
+        failure {
+            mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline failed :('
+        }
     }
 }
