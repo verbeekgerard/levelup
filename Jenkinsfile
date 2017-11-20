@@ -22,10 +22,10 @@ pipeline {
     post {
 
         success {
-                    mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline success :)'
-                }
+          echo 'success'
+        }
         failure {
-            mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline failed :('
+          echo 'failure'
         }
     }
 }
