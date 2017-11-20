@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                mvn build
                 echo 'Building..'
             }
         }
