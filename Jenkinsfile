@@ -17,5 +17,11 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+        success {
+            mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline failed :('
+        }
+        failure {
+            mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline failed :('
+        }
     }
 }
