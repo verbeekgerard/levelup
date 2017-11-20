@@ -32,7 +32,7 @@ pipeline {
     }
      post {
         always {
-            junit '**/target/*.xml'
+            echo 'deaskdkas'
         }
         failure {
               echo 'Deploying....'
