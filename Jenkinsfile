@@ -10,17 +10,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'sh mvn test'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'mvn verify -Pintegrationtest'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                retry(3) {
+                    sh './flakey-deploy.sh'
+                }
+
+                timeout(time: 3, unit: 'MINUTES') {
+                   input message:'Approve deployment?'
+                }
             }
         }
     }
