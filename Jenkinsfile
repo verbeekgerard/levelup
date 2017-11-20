@@ -24,6 +24,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+
+                 retry(3) {
+                    echo 'smoke....'
+                 }
+
+                 timeout(time: 3, unit: 'MINUTES') {
+                    echo 'Timeout!'
+                 }
+
             }
         }
     }
