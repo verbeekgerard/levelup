@@ -20,9 +20,10 @@ pipeline {
     }
 
     post {
-        always {
-            mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline success :)'
-        }
+
+        success {
+                    mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline success :)'
+                }
         failure {
             mail to: gerard.verbeek@luminis.eu, subject: 'The Pipeline failed :('
         }
