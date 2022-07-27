@@ -22,4 +22,9 @@ public class HelloWorldITest {
   public void test3() {
     assertTrue(true);
   }
+
+  @Test
+  public void test5() {
+    assertTrue(true);
+  }
 }
