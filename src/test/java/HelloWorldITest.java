@@ -27,4 +27,19 @@ public class HelloWorldITest {
   public void test4() {
     assertTrue(true);
   }
+
+  @Test
+  public void test5() {
+    assertTrue(true);
+  }
+
+  @Test
+  public void test6() {
+    assertTrue(true);
+  }
+
+  @Test
+  public void test7() {
+    assertTrue(true);
+  }
 }
